@@ -1,20 +1,134 @@
 body {
     background-image: url("images/bd.png");
-    background-size: 100%;
+    background-size: contain;
+    background-position: center;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
 }
 
 h1 {
     font-size: 4rem;
+    margin: 0.5rem 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: glow 1s infinite alternate;
 }
 
 h2 {
     font-size: 2rem;
+    margin: 0.5rem 0;
 }
 
-img {
-    padding-top: 3%;
-    height: 50%;
+#time-left {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.time-section {
+    display: inline-block;
+    margin: 0 10px;
+    animation: bounce 3s infinite alternate;
+}
+
+.time-section span {
+    font-size: 2rem;
+    display: block;
+}
+
+.image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.birthday-img {
+    height: 100px;
+    width: auto;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2, #time-left {
+        font-size: 1.5rem;
+    }
+
+    .time-section {
+        margin: 0 5px;
+    }
+
+    .time-section span {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+  
+}
+
+@media (max-width: 480px) {
+  
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2, #time-left {
+        font-size: 1.2rem;
+    }
+
+    .time-section {
+        margin: 0 3px;
+    }
+
+    .time-section span {
+        font-size: 1.2rem;
+    }
+
+    .birthday-img {
+        height: 80px;
+    }
+
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
 }
